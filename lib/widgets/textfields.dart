@@ -15,7 +15,11 @@ class EmailField extends StatelessWidget{
         ),
         borderRadius: BorderRadius.circular(15.0),
       ),
-      child: TextField(
+      child: TextSelectionTheme(
+        data: TextSelectionThemeData(
+          cursorColor: Colors.black, // Set the cursor color
+        ),
+       child: TextField(
         keyboardType: TextInputType.emailAddress,
         style: TextStyle(fontSize: 22.0),
         decoration: InputDecoration(
@@ -29,6 +33,7 @@ class EmailField extends StatelessWidget{
           ),
         ),
       ),
+      )
     );
   }
 }
@@ -49,6 +54,10 @@ class PasswordField extends StatelessWidget{
         ),
         borderRadius: BorderRadius.circular(15.0),
       ),
+      child: TextSelectionTheme(
+        data: TextSelectionThemeData(
+          cursorColor: Colors.black, // Set the cursor color
+        ),
       child: TextField(
         keyboardType: TextInputType.visiblePassword,
         style: TextStyle(fontSize: 22.0),
@@ -77,6 +86,45 @@ class PasswordField extends StatelessWidget{
           ),
         ),
       ),
+      )
+    );
+  }
+}
+
+class CreateAccountFLN extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 380.0,
+        height: 70.0,
+        padding: EdgeInsets.only(left: 10.0, right: 10.0),
+        margin: EdgeInsets.only(top: 60.0),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Color(0xff7E7D7D),
+            width: 1.5,
+          ),
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: TextSelectionTheme(
+          data: TextSelectionThemeData(
+            cursorColor: Colors.black, // Set the cursor color
+          ),
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            style: TextStyle(fontSize: 22.0),
+            decoration: InputDecoration(
+              labelText: "First & Last Name",
+              labelStyle: TextStyle(color: Color(0xff7E7D7D), fontSize: 20.0, fontWeight: FontWeight.w400),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.transparent),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.transparent),
+              ),
+            ),
+          ),
+        )
     );
   }
 }

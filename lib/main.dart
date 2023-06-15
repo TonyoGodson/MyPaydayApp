@@ -1,18 +1,18 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:my_run_app/app_screens/Home.dart';
-import 'package:my_run_app/app_screens/first_screen.dart';
+import 'package:my_run_app/app_screens/login_screen.dart';
+import 'package:my_run_app/app_screens/create_account_screen.dart';
 
-void main() => runApp(CounterApp());
+void main() => runApp(MyPayDayApp());
 
-class  CounterApp extends StatelessWidget{
+class  MyPayDayApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "Tonyo App",
-        home: Home()
+        title: "Payday App",
+        home: CreateAccountScreen()
     );
   }
 }

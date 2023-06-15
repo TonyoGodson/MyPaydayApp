@@ -3,7 +3,7 @@ import 'package:my_run_app/widgets/Texts.dart';
 import 'package:my_run_app/widgets/buttons.dart';
 import 'package:my_run_app/widgets/textfields.dart';
 
-class Home extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: Colors.white70,
-        shadowColor: Colors.white70,
+        elevation: 0,
       ),
       body: Center(
         child: Container(
@@ -35,10 +35,10 @@ class Home extends StatelessWidget {
               LoginText(),
               PaydayText(),
               DontHaveAcct(),
-                EmailField(),
-                PasswordField(),
-                ForgotPass(),
-                LoginButton()
+              EmailField(),
+              PasswordField(),
+              ForgotPass(),
+              LoginButton()
         ])
       )
     ));
