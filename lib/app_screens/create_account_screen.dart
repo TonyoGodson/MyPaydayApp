@@ -29,12 +29,12 @@ class CreateAccountScreen extends StatelessWidget{
                 color: Colors.white70,
                 child: Column(
                     children: [
-                      StartSending(),
-                      Receiving(),
-                      AlreadyHave(),
+                      StartSendingText(),
+                      ReceivingText(),
+                      AlreadyHaveText(),
                       CreateAccountFLN(),
-                      PrivacyPolicy(),
-                      CreateAccountContinue()
+                      PrivacyPolicyText(),
+                      CreateAccountContinueBtn()
                     ])
             )
         ));

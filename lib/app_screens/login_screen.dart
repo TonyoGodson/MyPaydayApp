@@ -34,10 +34,10 @@ class LoginScreen extends StatelessWidget {
             children: [
               LoginText(),
               PaydayText(),
-              DontHaveAcct(),
+              DontHaveAcctText(),
               EmailField(),
               PasswordField(),
-              ForgotPass(),
+              ForgotPassText(),
               LoginButton()
         ])
       )
