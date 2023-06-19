@@ -228,15 +228,23 @@ class ResetPasswordBtn extends StatelessWidget{
   }
 }
 
-class PinPad extends StatelessWidget{
+String value = "";
+class  PinpPad extends StatefulWidget {
+  @override
+  _PinPadState createState() => _PinPadState();
+}
+class  _PinPadState extends State< PinpPad> {
+  List<bool> dotColors = [false, false, false, false];
   @override
   Widget build(BuildContext context) {
-    String value = "";
-    String newValue = "";
     return Container(child:
       Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            buildDot(dotColors[0]),
+            buildDot(dotColors[1]),
+            buildDot(dotColors[2]),
+            buildDot(dotColors[3]),
             Stack(
               children: [
                 Container(
@@ -245,7 +253,7 @@ class PinPad extends StatelessWidget{
                   margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color:  value.length > 0 ? Colors.green : Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
@@ -309,7 +317,7 @@ class PinPad extends StatelessWidget{
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
-              children: [GestureDetector(
+              children: [GestureDetector (
                       onTap: () {
                         if(value.toString().length < 4) {
                           value += "1";
@@ -643,10 +651,12 @@ class PinPad extends StatelessWidget{
             Stack(
               children: [GestureDetector(
                 onTap: () {
-                      if(value.toString().length < 4) {
-                        value += "0";
-                        print(value);
-                      }
+                  GestureDetector;
+                      // if(value.toString().length < 4) {
+                      //   value += "0";
+                      //   print(value);
+                      //   updateDotColors();
+                      // }
                 },
                 child:
                 Container(
@@ -709,5 +719,66 @@ class PinPad extends StatelessWidget{
           ],)
       ],));
   }
+
+  void updateDotColors() {
+    if (value.length == 1) {
+      setState(() {
+        dotColors = [true, false, false, false];
+      });
+    } else if (value.length == 2) {
+      setState(() {
+        dotColors = [true, true, false, false];
+      });
+    } else if (value.length == 3) {
+      setState(() {
+        dotColors = [true, true, true, false];
+      });
+    } else if (value.length == 4) {
+      setState(() {
+        dotColors = [true, true, true, true];
+      });
+    }
+  }
+  GestureDetector buildDot(bool isActive) {
+    return GestureDetector(
+      onTap: () {
+        if (value.length < 4) {
+          setState(() {
+            value += "1";
+            print(value);
+            updateDotColors();
+          });
+        }
+      },
+      child: Container(
+        width: 12,
+        height: 12,
+        margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: isActive ? Colors.green : Color(0xE5E3E3FF),
+          border: Border.all(
+            color: Colors.transparent,
+            width: 2.0,
+          ),
+        ),
+      ),
+    );
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

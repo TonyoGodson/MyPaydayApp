@@ -40,7 +40,7 @@ class PinScreen extends StatelessWidget {
                     ],
                   ),
                   EnterASecurePin(),
-                  PinPad(),
+                  PinpPad()
                 ]))));
   }
 }
