@@ -241,19 +241,15 @@ class  _PinPadState extends State< PinpPad> {
       Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            buildDot(dotColors[0]),
-            buildDot(dotColors[1]),
-            buildDot(dotColors[2]),
-            buildDot(dotColors[3]),
             Stack(
               children: [
                 Container(
                   width: 12,
                   height: 12,
-                  margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
+                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color:  value.length > 0 ? Colors.green : Color(0xE5E3E3FF),
+                    color:  value.isNotEmpty ? Colors.green : const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
@@ -267,10 +263,10 @@ class  _PinPadState extends State< PinpPad> {
                 Container(
                   width: 12,
                   height: 12,
-                  margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
+                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: value.length > 1 ? Colors.green : const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
@@ -284,10 +280,10 @@ class  _PinPadState extends State< PinpPad> {
                 Container(
                   width: 12,
                   height: 12,
-                  margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
+                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: value.length > 2 ? Colors.green : const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
@@ -301,10 +297,10 @@ class  _PinPadState extends State< PinpPad> {
                 Container(
                   width: 12,
                   height: 12,
-                  margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
+                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: value.length > 3 ? Colors.green : const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
@@ -314,6 +310,7 @@ class  _PinPadState extends State< PinpPad> {
               ],
             ),
           ],),
+// =================Buttons 1, 2, 3======================
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
@@ -321,22 +318,24 @@ class  _PinPadState extends State< PinpPad> {
                       onTap: () {
                         if(value.toString().length < 4) {
                           value += "1";
-                          print(value);
+                          debugPrint(value);
+                          setState(() {
+                          });
                         }
                 },
                 child: Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '1',
@@ -354,22 +353,24 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                 if(value.toString().length < 4) {
                   value += "2";
-                  print(value);
+                  debugPrint(value);
+                  setState(() {
+                  });
                 }
                 },
                 child: Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '2',
@@ -387,22 +388,24 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                     if(value.toString().length < 4) {
                       value += "3";
-                      print(value);
+                      debugPrint(value);
+                      setState(() {
+                      });
                     }
                 },
                 child: Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '3',
@@ -416,6 +419,7 @@ class  _PinPadState extends State< PinpPad> {
               )],
             ),
           ],),
+// =================Buttons 4, 5, 6======================
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
@@ -423,23 +427,25 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                       if(value.toString().length < 4) {
                         value += "4";
-                        print(value);
+                        debugPrint(value);
+                        setState(() {
+                        });
                       }
                 },
                 child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '4',
@@ -457,23 +463,25 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                       if(value.toString().length < 4) {
                         value += "5";
-                        print(value);
+                        debugPrint(value);
+                        setState(() {
+                        });
                       }
                 },
                 child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '5',
@@ -491,23 +499,25 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                       if(value.toString().length < 4) {
                         value += "6";
-                        print(value);
+                        debugPrint(value);
+                        setState(() {
+                        });
                       }
                 },
                 child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '6',
@@ -521,6 +531,7 @@ class  _PinPadState extends State< PinpPad> {
               )],
             ),
           ],),
+// =================Buttons 7, 8, 9======================
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
@@ -528,23 +539,25 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                       if(value.toString().length < 4) {
                         value += "7";
-                        print(value);
+                        debugPrint(value);
+                        setState(() {
+                        });
                       }
                 },
                 child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '7',
@@ -562,23 +575,25 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                       if(value.toString().length < 4) {
                         value += "8";
-                        print(value);
+                        debugPrint(value);
+                        setState(() {
+                        });
                       }
                 },
                 child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '8',
@@ -596,23 +611,25 @@ class  _PinPadState extends State< PinpPad> {
                 onTap: () {
                       if(value.toString().length < 4) {
                         value += "9";
-                        print(value);
+                        debugPrint(value);
+                        setState(() {
+                        });
                       }
                 },
                 child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '9',
@@ -626,6 +643,7 @@ class  _PinPadState extends State< PinpPad> {
               )],
             ),
           ],),
+// =================Buttons 0, Del=======================
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
@@ -633,16 +651,16 @@ class  _PinPadState extends State< PinpPad> {
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0x00E3E3FF),
+                    color: const Color(0x00E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                   ),
                 ),
@@ -652,26 +670,27 @@ class  _PinPadState extends State< PinpPad> {
               children: [GestureDetector(
                 onTap: () {
                   GestureDetector;
-                      // if(value.toString().length < 4) {
-                      //   value += "0";
-                      //   print(value);
-                      //   updateDotColors();
-                      // }
+                      if(value.toString().length < 4) {
+                        value += "0";
+                        debugPrint(value);
+                        setState(() {
+                        });
+                      }
                 },
                 child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xE5E3E3FF),
+                    color: const Color(0xE5E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       '0',
@@ -688,25 +707,27 @@ class  _PinPadState extends State< PinpPad> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    if (value.toString().length > 0) {
+                    if (value.toString().isNotEmpty) {
                       value = value.substring(0, value.length - 1);
-                      print(value);
+                      debugPrint(value);
+                      setState(() {
+                      });
                     }
                   },
                   child:
                 Container(
                   width: 55,
                   height: 55,
-                  margin: EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+                  margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0x00E3E3FF),
+                    color: const Color(0x00E3E3FF),
                     border: Border.all(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Icon(
                     Icons.backspace,
@@ -720,51 +741,51 @@ class  _PinPadState extends State< PinpPad> {
       ],));
   }
 
-  void updateDotColors() {
-    if (value.length == 1) {
-      setState(() {
-        dotColors = [true, false, false, false];
-      });
-    } else if (value.length == 2) {
-      setState(() {
-        dotColors = [true, true, false, false];
-      });
-    } else if (value.length == 3) {
-      setState(() {
-        dotColors = [true, true, true, false];
-      });
-    } else if (value.length == 4) {
-      setState(() {
-        dotColors = [true, true, true, true];
-      });
-    }
-  }
-  GestureDetector buildDot(bool isActive) {
-    return GestureDetector(
-      onTap: () {
-        if (value.length < 4) {
-          setState(() {
-            value += "1";
-            print(value);
-            updateDotColors();
-          });
-        }
-      },
-      child: Container(
-        width: 12,
-        height: 12,
-        margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: isActive ? Colors.green : Color(0xE5E3E3FF),
-          border: Border.all(
-            color: Colors.transparent,
-            width: 2.0,
-          ),
-        ),
-      ),
-    );
-  }
+  // void updateDotColors() {
+  //   if (value.length == 1) {
+  //     setState(() {
+  //       dotColors = [true, false, false, false];
+  //     });
+  //   } else if (value.length == 2) {
+  //     setState(() {
+  //       dotColors = [true, true, false, false];
+  //     });
+  //   } else if (value.length == 3) {
+  //     setState(() {
+  //       dotColors = [true, true, true, false];
+  //     });
+  //   } else if (value.length == 4) {
+  //     setState(() {
+  //       dotColors = [true, true, true, true];
+  //     });
+  //   }
+  // }
+  // GestureDetector buildDot(bool isActive) {
+  //   return GestureDetector(
+  //     onTap: () {
+  //       if (value.length < 4) {
+  //         setState(() {
+  //           value += "1";
+  //           print(value);
+  //           updateDotColors();
+  //         });
+  //       }
+  //     },
+  //     child: Container(
+  //       width: 12,
+  //       height: 12,
+  //       margin: EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
+  //       decoration: BoxDecoration(
+  //         shape: BoxShape.circle,
+  //         color: isActive ? Colors.green : Color(0xE5E3E3FF),
+  //         border: Border.all(
+  //           color: Colors.transparent,
+  //           width: 2.0,
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
 }
 

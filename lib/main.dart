@@ -16,8 +16,8 @@ class  MyPayDayApp extends StatelessWidget{
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Payday App",
-        // home: LoginScreen()
-        home: PaydayLogin()
+        home: LoginScreen()
+        // home: PaydayLogin()
     );
   }
 }
