@@ -243,77 +243,81 @@ class  _PinPadState extends State< PinpPad> {
           width: MediaQuery.of(context).size.width * .6,
           height: 70,
           padding: EdgeInsets.zero,
-          child: Row(mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    width: value.isNotEmpty ? 20 : 12,
-                    height: value.isNotEmpty ? 20: 12,
-                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color:  value.isNotEmpty ? Colors.green : const Color(0xE5E3E3FF),
-                      border: Border.all(
-                        color: Colors.transparent,
-                        width: 2.0,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 25,
+                  height: 50,
+                  padding: value.isNotEmpty ? EdgeInsets.zero : const EdgeInsets.all(6),
+                  child:
+                    Container(
+                      margin: const EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color:  value.isNotEmpty ? Colors.green : const Color(0xE5E3E3FF),
+                        border: Border.all(
+                          color: Colors.transparent,
+                          width: 2.0,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Stack(
-                children: [
+                ),
+                Container(
+                  width: 25,
+                  height: 50,
+                  padding: value.length > 1 ? EdgeInsets.zero : const EdgeInsets.all(6),
+                  child:
                   Container(
-                    width: value.length > 1 ? 20 : 12,
-                    height: value.length > 1 ? 20: 12,
-                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: value.length > 1 ? Colors.green : const Color(0xE5E3E3FF),
-                      border: Border.all(
-                        color: Colors.transparent,
-                        width: 2.0,
+                      margin: const EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: value.length > 1 ? Colors.green : const Color(0xE5E3E3FF),
+                        border: Border.all(
+                          color: Colors.transparent,
+                          width: 2.0,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Stack(
-                children: [
+                ),
+                Container(
+                  width: 25,
+                  height: 50,
+                  padding: value.length > 2 ? EdgeInsets.zero : const EdgeInsets.all(6),
+                  child:
                   Container(
-                    width: value.length > 2 ? 20 : 12,
-                    height: value.length > 2  ? 20: 12,
-                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: value.length > 2 ? Colors.green : const Color(0xE5E3E3FF),
-                      border: Border.all(
-                        color: Colors.transparent,
-                        width: 2.0,
+                      margin: const EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: value.length > 2 ? Colors.green : const Color(0xE5E3E3FF),
+                        border: Border.all(
+                          color: Colors.transparent,
+                          width: 2.0,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Stack(
-                children: [
+                ),
+                Container(
+                  width: 25,
+                  height: 50,
+                  padding: value.length > 3 ? EdgeInsets.zero : const EdgeInsets.all(6),
+                  child:
                   Container(
-                    width: value.length > 3 ? 20 : 12,
-                    height: value.length > 3  ? 20: 12,
-                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: value.length > 3 ? Colors.green : const Color(0xE5E3E3FF),
-                      border: Border.all(
-                        color: Colors.transparent,
-                        width: 2.0,
+                      margin: const EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: value.length > 3 ? Colors.green : const Color(0xE5E3E3FF),
+                        border: Border.all(
+                          color: Colors.transparent,
+                          width: 2.0,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],),
+                ),
+              ],),
+          ),
         ),
 // =================Buttons 1, 2, 3======================
         Row(mainAxisAlignment: MainAxisAlignment.center,
