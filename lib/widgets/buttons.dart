@@ -239,77 +239,82 @@ class  _PinPadState extends State< PinpPad> {
   Widget build(BuildContext context) {
     return Container(child:
       Column(children: [
-        Row(mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              children: [
-                Container(
-                  width: 12,
-                  height: 12,
-                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color:  value.isNotEmpty ? Colors.green : const Color(0xE5E3E3FF),
-                    border: Border.all(
-                      color: Colors.transparent,
-                      width: 2.0,
+        Container(
+          width: MediaQuery.of(context).size.width * .6,
+          height: 70,
+          padding: EdgeInsets.zero,
+          child: Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    width: value.isNotEmpty ? 20 : 12,
+                    height: value.isNotEmpty ? 20: 12,
+                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color:  value.isNotEmpty ? Colors.green : const Color(0xE5E3E3FF),
+                      border: Border.all(
+                        color: Colors.transparent,
+                        width: 2.0,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Stack(
-              children: [
-                Container(
-                  width: 12,
-                  height: 12,
-                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: value.length > 1 ? Colors.green : const Color(0xE5E3E3FF),
-                    border: Border.all(
-                      color: Colors.transparent,
-                      width: 2.0,
+                ],
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: value.length > 1 ? 20 : 12,
+                    height: value.length > 1 ? 20: 12,
+                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: value.length > 1 ? Colors.green : const Color(0xE5E3E3FF),
+                      border: Border.all(
+                        color: Colors.transparent,
+                        width: 2.0,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Stack(
-              children: [
-                Container(
-                  width: 12,
-                  height: 12,
-                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: value.length > 2 ? Colors.green : const Color(0xE5E3E3FF),
-                    border: Border.all(
-                      color: Colors.transparent,
-                      width: 2.0,
+                ],
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: value.length > 2 ? 20 : 12,
+                    height: value.length > 2  ? 20: 12,
+                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: value.length > 2 ? Colors.green : const Color(0xE5E3E3FF),
+                      border: Border.all(
+                        color: Colors.transparent,
+                        width: 2.0,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Stack(
-              children: [
-                Container(
-                  width: 12,
-                  height: 12,
-                  margin: const EdgeInsets.only(left: 10.0, top: 35.0, right: 12.0, bottom: 30.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: value.length > 3 ? Colors.green : const Color(0xE5E3E3FF),
-                    border: Border.all(
-                      color: Colors.transparent,
-                      width: 2.0,
+                ],
+              ),
+              Stack(
+                children: [
+                  Container(
+                    width: value.length > 3 ? 20 : 12,
+                    height: value.length > 3  ? 20: 12,
+                    margin: const EdgeInsets.only(left: 10.0, top: 0.0, right: 12.0, bottom: 0.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: value.length > 3 ? Colors.green : const Color(0xE5E3E3FF),
+                      border: Border.all(
+                        color: Colors.transparent,
+                        width: 2.0,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],),
+                ],
+              ),
+            ],),
+        ),
 // =================Buttons 1, 2, 3======================
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [

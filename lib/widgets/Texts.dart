@@ -446,11 +446,11 @@ class RememberPasswordText extends StatelessWidget{
     return Align(
         alignment: Alignment.topLeft,
         child: Container(
-            margin: EdgeInsets.only(top: 7.0),
+            margin: const EdgeInsets.only(top: 7.0),
             child: Column(children: [
               Row(
                   children: [
-                    Text(
+                    const Text(
                       "Remember password? ",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
@@ -470,7 +470,7 @@ class RememberPasswordText extends StatelessWidget{
               },
               child:
 
-              Text("Back to Login",
+              const Text("Back to Login",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 15.0,
@@ -487,7 +487,7 @@ class RememberPasswordText extends StatelessWidget{
 class EnterASecurePin extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
            child: Column(children: [Padding( padding: EdgeInsets.only(top: 20.0),
                      child: Text(
                       "Enter your PIN",
@@ -512,9 +512,11 @@ class EnterASecurePin extends StatelessWidget{
 }
 
 class PinpadLogoutText extends StatelessWidget{
+  const PinpadLogoutText({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Text("Logout",
+    return const Text("Logout",
       textAlign: TextAlign.end,
       style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w500),);
   }
